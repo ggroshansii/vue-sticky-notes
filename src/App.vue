@@ -6,7 +6,6 @@
       @updatedCount="count = $event"
     ></app-note-input>
     <app-note-display :notes="notes"></app-note-display>
-    <p>{{ count }}</p>
   </div>
 </template>
 
@@ -35,6 +34,8 @@ export default {
 </script>
 
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 .container {
   height: 100vh;
   width: 100vw;

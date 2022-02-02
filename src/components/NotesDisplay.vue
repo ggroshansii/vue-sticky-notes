@@ -1,6 +1,6 @@
 <template>
   <div class="notes-display-container">
-    <div v-for="note in notes" :key="note.id" class="sticky-note">{{ note.note }}</div>
+    <div @click="deleteNote" v-for="note in notes" :key="note.id" :id="note.id" class="sticky-note">{{ note.note }}</div>
   </div>
 </template>
 
@@ -9,6 +9,14 @@ export default {
   props: {
     notes: Array,
   },
+  methods: {
+      deleteNote(e) {
+          let key = e.target.id;
+          let index = this.notes.findIndex((obj) => obj.id === key);
+          this.notes.splice(index, 1);
+          console.log(index)
+      }
+  }
 };
 </script>
 
@@ -27,6 +35,7 @@ export default {
 }
 
 .sticky-note {
+    font-family: cursive;
     background-color: yellow;
     width: 200px;
     height: 200px;

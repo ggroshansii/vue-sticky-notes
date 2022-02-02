@@ -41,11 +41,15 @@
 </script>
 
 <style scoped>
+h2 {
+    font-family: lobster;
+}
 .note-input-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
 }
 
 textarea {

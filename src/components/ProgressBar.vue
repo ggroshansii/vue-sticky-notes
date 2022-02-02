@@ -15,11 +15,13 @@
 <style scoped>
     .progress-container {
         width: 100%;
-        background-color: gray;
-        height: 2rem;
+        background-color: lightgray;
+        height: 3rem;
+        margin-top: 3rem;
     }
     .progress-bar {
-        background-color: lightblue;
+        background-color: #1370FB;
         transition: pass;
+        
     }
 </style>
