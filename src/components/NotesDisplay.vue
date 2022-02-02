@@ -14,7 +14,12 @@ export default {
           let key = e.target.id;
           let index = this.notes.findIndex((obj) => obj.id === key);
           this.notes.splice(index, 1);
-          console.log(index)
+          this.$emit("changedCount", this.count);
+      },
+  },
+  computed: {
+      count: function() {
+          return this.notes.length;
       }
   }
 };

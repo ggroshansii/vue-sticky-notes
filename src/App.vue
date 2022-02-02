@@ -1,11 +1,12 @@
 <template>
   <div class="container">
     <app-progress-bar :count="count"></app-progress-bar>
-    <app-note-input
-      @updatedNotes="notes = $event"
-      @updatedCount="count = $event"
+    <app-note-input @updatedNotes="notes = $event"
+                    @updatedCount="count = $event"
     ></app-note-input>
-    <app-note-display :notes="notes"></app-note-display>
+    <app-note-display :notes="notes"
+                      @changedCount="count = $event"
+    ></app-note-display>
   </div>
 </template>
 
