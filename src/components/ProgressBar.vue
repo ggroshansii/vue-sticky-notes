@@ -1,12 +1,14 @@
 <template>
     <div class="progress-container">
-        <div class="progress-bar"></div>
+        <div class="progress-bar" :style="{width: (count*10) + '%'}"></div>
     </div>
 </template>
 
 <script>
     export default {
-        
+        props: {
+            count: Number,
+        }
     }
 </script>
 
@@ -17,7 +19,6 @@
         height: 2rem;
     }
     .progress-bar {
-        width: 10%;
         background-color: lightblue;
         transition: pass;
     }
