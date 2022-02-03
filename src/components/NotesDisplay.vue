@@ -25,10 +25,7 @@ export default {
 
   },
   computed: {
-    count: function () {
-      this.$emit("changedCount", this.count);
-      return this.notes.length;
-    },
+
   },
 };
 </script>

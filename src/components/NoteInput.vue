@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import {eventBus} from "../main";
 export default {
   data: function () {
     return {
@@ -32,7 +33,7 @@ export default {
         let id = this.$uuid.v1();
         this.notes.push({ id: id, note: this.currentNote });
         this.$emit("updatedNotes", this.notes);
-        this.$emit("updatedCount", this.count);
+        eventBus.$emit("increaseCount", this.count);
         this.currentNote = "";
       } else {
         this.isVisible = true;

@@ -1,24 +1,37 @@
 <template>
   <div>
-    <div @click="deleteNote" class="sticky-note" :id="note.id">{{note.note}}</div>
+    <div @click="deleteNote" class="sticky-note" :id="note.id">
+      {{ note.note }}
+    </div>
   </div>
 </template>
 
 <script>
+import { eventBus } from "../main";
 export default {
+  data: function () {
+    return {
+      count: null,
+    };
+  },
   props: {
     notes: Array,
     note: Object,
   },
   methods: {
+    keepCount() {
+      console.log("fired");
+      this.count = this.notes.length;
+      eventBus.$emit("decreaseCount", this.count);
+    },
     deleteNote(e) {
       let key = e.target.id;
-      console.log("KEY",key)
       let index = this.notes.findIndex((obj) => obj.id === key);
-      console.log("INDEX", index);
       this.notes.splice(index, 1);
+      this.keepCount();
     },
   },
+  watch: {},
 };
 </script>
 

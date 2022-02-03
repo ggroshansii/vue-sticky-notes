@@ -5,9 +5,24 @@
 </template>
 
 <script>
+import {eventBus} from "../main";
     export default {
+        data: function() {
+            return {
+                count: null
+            }
+        },
         props: {
-            count: Number,
+
+        },
+        created() {
+
+            eventBus.$on('increaseCount', (newCount) => {
+                this.count = newCount
+            })
+            eventBus.$on('decreaseCount', (newCount) => {
+                this.count = newCount
+            })
         }
     }
 </script>
