@@ -14,10 +14,10 @@
 
 <style scoped>
     .progress-container {
-        width: 100%;
+        width: 80%;
         background-color: lightgray;
         height: 3rem;
-        margin-top: 3rem;
+        margin: 3rem auto;
     }
     .progress-bar {
         background-color: #1370FB;

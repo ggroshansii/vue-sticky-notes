@@ -37,6 +37,7 @@ export default {
   align-content: center;
   align-items: center;
   margin: 3rem auto;
+  padding: 0 100px;
 }
 
 .sticky-note {
